@@ -16,13 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var myFirstPickerView: UIPickerView!
     @IBOutlet weak var myButtonBrais: UIButton!
     
+    @IBOutlet weak var myPageControl: UIPageControl!
     
 // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
         super.viewDidLoad()
-        myButtonBrais.setTitle("Brais", for: .normal)
-        myButtonBrais.backgroundColor = .white
+        
+        myButtonBrais.setTitle("", for: .normal)
+        myButtonBrais.backgroundColor = .black
         myButtonBrais.setTitleColor(.white, for: .selected)
         
         // PICKERS
@@ -33,20 +35,37 @@ class ViewController: UIViewController {
         myFirstPickerView.dataSource = self
         myFirstPickerView.delegate = self
         
+        //PAGE CONTROL
+        myPageControl.numberOfPages = myPickerArray.count
+        myPageControl.backgroundColor = .cyan
+//        para pintar el seleccionado
+        myPageControl.currentPageIndicatorTintColor = .blue
+        myPageControl.pageIndicatorTintColor = .lightGray
         
     }
+        //ACTIONS
     //ACCIONES DEL BOTON
     @IBAction func buttonAction(_ sender: Any) {
-        if myButtonBrais.backgroundColor == .black{
+        if myButtonBrais.backgroundColor == .gray{
             myButtonBrais.backgroundColor = .brown
             
         }else{
-            myButtonBrais.backgroundColor = .blue
+            myButtonBrais.backgroundColor = .black
         }
     }
+//    ACCIONES DEL PAGE CONTROL
+    
+    @IBAction func myPageCAction(_ sender: Any) {
+//       0 porque solo se tiene una columna en el picker
+    myFirstPickerView.selectRow(myPageControl.currentPage, inComponent: 0, animated: true)
+        let myString = myPickerArray[myPageControl.currentPage]
+        
+        myButtonBrais.setTitle(myString, for: .normal)
+        
+    }
+    
     
 }
-
 //EXTENDEMOS EL VIEW CONTROLLER PARA NO METER TANTO CODIGO EN SUS LLAVES
 
 //datasource sirve para cargar datos en esa vista y delegate para interactuar con ellas
@@ -70,6 +89,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         let myString = myPickerArray[row]
         
         myButtonBrais.setTitle(myString, for: .normal)
+        
+        myPageControl.currentPage = row
     }
 }
     
