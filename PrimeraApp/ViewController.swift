@@ -12,16 +12,20 @@ class ViewController: UIViewController {
     private let myPickerArray = ["Uno","Dos","Tres","Cuatro","Cinco"]
 
 //    ESTOS SON LOS OUTLES
-        
-    @IBOutlet weak var myFirstPickerView: UIPickerView!
     @IBOutlet weak var myButtonBrais: UIButton!
+    @IBOutlet weak var myFirstPickerView: UIPickerView!
+    
     @IBOutlet weak var myPageControl: UIPageControl!
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var mySlider: UISlider!
     
 // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
         super.viewDidLoad()
+        
+        //       OULETS CARACTERISTICAS
         
         myButtonBrais.setTitle("", for: .normal)
         myButtonBrais.backgroundColor = .black
@@ -50,6 +54,12 @@ class ViewController: UIViewController {
             mySegmentedControl.insertSegment(withTitle: value, at: index, animated: true)
             
         }
+        //SLIDERS
+        mySlider.minimumTrackTintColor = .red
+        mySlider.minimumValue = 1
+        mySlider.maximumValue = Float(myPickerArray.count)
+        mySlider.value = 1
+        
         
     }
         //ACTIONS
@@ -73,6 +83,8 @@ class ViewController: UIViewController {
         
         mySegmentedControl.selectedSegmentIndex = myPageControl.currentPage
         
+        mySlider.value = Float(myPageControl.currentPage + 1)
+        
     }
     //ACCIONES DEL SEGMENTED CONTROL
     
@@ -85,10 +97,54 @@ class ViewController: UIViewController {
         
         myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
         
+        mySlider.value = Float(mySegmentedControl.selectedSegmentIndex+1)
+        
     }
     
+    //  ACCIONES DEL  SLIDER
+    
+    @IBAction func mySliderAction(_ sender: Any) {
+        
+        switch mySlider.value {
+        case 1..<2:
+            mySegmentedControl.selectedSegmentIndex = 0
+            myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+            let myString = myPickerArray[0]
+            myButtonBrais.setTitle(myString, for: .normal)
+            myPageControl.currentPage = 0
+        case 2..<3:
+            mySegmentedControl.selectedSegmentIndex = 1
+            myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+            let myString = myPickerArray[1]
+            myButtonBrais.setTitle(myString, for: .normal)
+            myPageControl.currentPage = 1
+        case 3..<4:
+            mySegmentedControl.selectedSegmentIndex = 2
+            myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+            let myString = myPickerArray[2]
+            myButtonBrais.setTitle(myString, for: .normal)
+            myPageControl.currentPage = 2
+        case 4..<5:
+            mySegmentedControl.selectedSegmentIndex = 3
+            myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+            let myString = myPickerArray[3]
+            myButtonBrais.setTitle(myString, for: .normal)
+            myPageControl.currentPage = 3
+        default:
+            mySegmentedControl.selectedSegmentIndex = 4
+            myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+            let myString = myPickerArray[4]
+            myButtonBrais.setTitle(myString, for: .normal)
+            myPageControl.currentPage = 4
+
+        }
+        
+        
+    }
+    
+    
 }
-//EXTENDEMOS EL VIEW CONTROLLER PARA NO METER TANTO CODIGO EN SUS LLAVES
+//EXTiENDE EL VIEW CONTROLLER PARA NO TENER TANTO CODIGO EN SUS LLAVES
 
 //datasource sirve para cargar datos en esa vista y delegate para interactuar con ellas
 
@@ -115,6 +171,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         myPageControl.currentPage = row
         
         mySegmentedControl.selectedSegmentIndex = row
+        
+        mySlider.value = Float(row+1)
     }
 }
     
