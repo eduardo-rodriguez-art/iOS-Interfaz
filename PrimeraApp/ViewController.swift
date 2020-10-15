@@ -24,7 +24,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mySwitch: UISwitch!
     
-// SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
+    @IBOutlet weak var myProgressView: UIProgressView!
+    
+    
+    @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var myLabelStepper: UILabel!
+    
+    @IBOutlet weak var myLabelSwitch: UILabel!
+    
+    // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
         super.viewDidLoad()
@@ -73,6 +82,19 @@ class ViewController: UIViewController {
         mySwitch.onTintColor = .blue
         mySwitch.isOn = false //Indica si esta apagado
         
+        // Progress View
+        myProgressView.progress = 0
+        myActivityIndicator.color = .orange
+        myActivityIndicator.startAnimating()
+//      cuando activity este apagado este se oculta
+        myActivityIndicator.hidesWhenStopped = true
+        
+        //LABELS
+        myLabelStepper.textColor = .lightGray
+        myLabelStepper.font = UIFont.boldSystemFont(ofSize: 30)
+        myLabelStepper.text = "1"
+        
+        myLabelSwitch.text = "esta apagado"
         
     }
         //ACTIONS
@@ -122,6 +144,8 @@ class ViewController: UIViewController {
     
     @IBAction func mySliderAction(_ sender: Any) {
         
+        var progress: Float = 0
+        
         switch mySlider.value {
             
         case 1..<2:
@@ -130,6 +154,7 @@ class ViewController: UIViewController {
             let myString = myPickerArray[0]
             myButtonBrais.setTitle(myString, for: .normal)
             myPageControl.currentPage = 0
+            progress = 0.2
         case 2..<3:
             mySegmentedControl.selectedSegmentIndex = 1
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
@@ -137,26 +162,32 @@ class ViewController: UIViewController {
             myButtonBrais.setTitle(myString, for: .normal)
             
             myPageControl.currentPage = 1
+            progress = 0.4
         case 3..<4:
             mySegmentedControl.selectedSegmentIndex = 2
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
             let myString = myPickerArray[2]
             myButtonBrais.setTitle(myString, for: .normal)
             myPageControl.currentPage = 2
+            progress = 0.6
         case 4..<5:
             mySegmentedControl.selectedSegmentIndex = 3
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
             let myString = myPickerArray[3]
             myButtonBrais.setTitle(myString, for: .normal)
             myPageControl.currentPage = 3
+            progress = 0.8
         default:
             mySegmentedControl.selectedSegmentIndex = 4
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
             let myString = myPickerArray[4]
             myButtonBrais.setTitle(myString, for: .normal)
             myPageControl.currentPage = 4
+            progress = 1
 
         }
+        
+        myProgressView.progress = progress
     }
     
 //    ACCIONES DEL STEPPER
@@ -168,7 +199,7 @@ class ViewController: UIViewController {
         mySlider.value = Float(miValor)
         mySegmentedControl.selectedSegmentIndex = Int(miValor)-1
         myPageControl.currentPage = Int(miValor) - 1
-        
+        myLabelStepper.text = "\(miValor)"
         
 //        myButtonBrais.setTitle(myString, for: .normal)
     }
@@ -177,10 +208,17 @@ class ViewController: UIViewController {
     
     @IBAction func mySwitchAction(_ sender: Any) {
 //        SI ESTA ENCENDIDO
+//        LO MISMO PASA SON ACTIVITY INDICATOR
         if mySwitch.isOn{
             myFirstPickerView.isHidden = false //hidden si esta apagado
+            myActivityIndicator.stopAnimating()
+            myLabelSwitch.text = "ON"
+
         }else{
             myFirstPickerView.isHidden = true
+            myActivityIndicator.startAnimating()
+            myLabelSwitch.text = "OFF"
+
         }
     }
     

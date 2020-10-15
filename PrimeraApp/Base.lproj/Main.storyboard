@@ -61,10 +61,29 @@
                                     <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="d2W-Nk-RBH"/>
                                 </connections>
                             </switch>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NoM-Iu-tjK">
+                                <rect key="frame" x="36" y="625" width="303" height="2"/>
+                            </progressView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ayw-HR-4BF">
+                                <rect key="frame" x="177.66666666666666" y="161" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWM-mO-T6b">
+                                <rect key="frame" x="255" y="527.66666666666663" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55r-fA-2HZ">
+                                <rect key="frame" x="230" y="579" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tDt-Jy-kkO" secondAttribute="trailing" constant="165" id="4HE-3K-sFj"/>
+                            <constraint firstItem="xWM-mO-T6b" firstAttribute="centerY" secondItem="Ddx-aH-gt7" secondAttribute="centerY" id="74B-dc-360"/>
                             <constraint firstItem="0Xd-lf-9lc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="D2V-y6-fen"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="top" secondItem="0Xd-lf-9lc" secondAttribute="bottom" constant="20" id="EtP-H0-U4h"/>
                             <constraint firstItem="o4T-RD-x9j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fps-4f-cQt"/>
@@ -72,12 +91,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Occ-2m-pH5" secondAttribute="trailing" constant="20" id="Ikc-FM-Vgb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Xd-lf-9lc" secondAttribute="trailing" constant="30" id="KeH-pO-HFl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="140" id="NhW-uI-xPL"/>
+                            <constraint firstItem="Ayw-HR-4BF" firstAttribute="centerX" secondItem="8xW-wK-qPT" secondAttribute="centerX" id="PRh-SJ-FlM"/>
                             <constraint firstItem="Occ-2m-pH5" firstAttribute="top" secondItem="8xW-wK-qPT" secondAttribute="bottom" constant="20" id="RNC-eU-HPF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NoM-Iu-tjK" secondAttribute="trailing" constant="20" id="RP8-AE-iix"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Syc-oA-Lez"/>
+                            <constraint firstItem="Ayw-HR-4BF" firstAttribute="centerY" secondItem="8xW-wK-qPT" secondAttribute="centerY" id="Syn-bs-qOk"/>
+                            <constraint firstItem="55r-fA-2HZ" firstAttribute="leading" secondItem="tDt-Jy-kkO" secondAttribute="trailing" constant="20" id="T4o-kT-eAc"/>
+                            <constraint firstItem="NoM-Iu-tjK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="UFA-9u-fDI"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="top" secondItem="Occ-2m-pH5" secondAttribute="bottom" constant="20" id="WQy-6e-BtZ"/>
+                            <constraint firstItem="55r-fA-2HZ" firstAttribute="centerY" secondItem="tDt-Jy-kkO" secondAttribute="centerY" id="ZEf-K4-KoO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8xW-wK-qPT" secondAttribute="bottom" constant="429" id="amN-ls-uK7"/>
                             <constraint firstItem="tDt-Jy-kkO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="dOS-9J-iky"/>
                             <constraint firstItem="Occ-2m-pH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eFP-L9-CWH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xWM-mO-T6b" secondAttribute="trailing" constant="20" id="fYd-Lh-LTU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55r-fA-2HZ" secondAttribute="trailing" constant="20" id="fdR-qq-SEh"/>
                             <constraint firstItem="0Xd-lf-9lc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gYN-3D-m8Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ccV-Gi-Gv4" secondAttribute="trailing" constant="20" id="gwF-Ei-6kS"/>
                             <constraint firstItem="Ddx-aH-gt7" firstAttribute="top" secondItem="o4T-RD-x9j" secondAttribute="bottom" constant="20" id="hAx-ZB-ZvT"/>
@@ -87,13 +114,19 @@
                             <constraint firstItem="tDt-Jy-kkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="khh-SO-blt"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mv6-Fb-okY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o4T-RD-x9j" secondAttribute="trailing" constant="20" id="nOx-jZ-c4z"/>
+                            <constraint firstItem="xWM-mO-T6b" firstAttribute="leading" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="20" id="tWS-vJ-r9K"/>
+                            <constraint firstItem="NoM-Iu-tjK" firstAttribute="top" secondItem="tDt-Jy-kkO" secondAttribute="bottom" constant="20" id="yX8-6g-9ol"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="myActivityIndicator" destination="Ayw-HR-4BF" id="oA6-jb-0Z3"/>
                         <outlet property="myButtonBrais" destination="0Xd-lf-9lc" id="X3Y-4G-dD7"/>
                         <outlet property="myFirstPickerView" destination="8xW-wK-qPT" id="lfR-Uc-Q35"/>
+                        <outlet property="myLabelStepper" destination="xWM-mO-T6b" id="El6-fE-qmt"/>
+                        <outlet property="myLabelSwitch" destination="55r-fA-2HZ" id="ANa-Pb-Lrh"/>
                         <outlet property="myPageControl" destination="Occ-2m-pH5" id="MRr-u7-uBf"/>
+                        <outlet property="myProgressView" destination="NoM-Iu-tjK" id="mnl-uS-7Aa"/>
                         <outlet property="mySegmentedControl" destination="ccV-Gi-Gv4" id="hFq-70-HjB"/>
                         <outlet property="mySlider" destination="o4T-RD-x9j" id="8xD-aG-omA"/>
                         <outlet property="myStepper" destination="Ddx-aH-gt7" id="bCG-pR-Pup"/>
