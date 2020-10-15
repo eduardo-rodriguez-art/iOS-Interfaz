@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         myLabelStepper.font = UIFont.boldSystemFont(ofSize: 30)
         myLabelStepper.text = "1"
         
-        myLabelSwitch.text = "esta apagado"
+        myLabelSwitch.text = "OFF"
         
     }
         //ACTIONS
@@ -122,6 +122,8 @@ class ViewController: UIViewController {
         
         myStepper.value = Double(myPageControl.currentPage + 1)
         
+        myLabelStepper.text = "\(myStepper.value)"
+        
     }
     //ACCIONES DEL SEGMENTED CONTROL
     
@@ -137,6 +139,7 @@ class ViewController: UIViewController {
         mySlider.value = Float(mySegmentedControl.selectedSegmentIndex+1)
         
         myStepper.value = Double(mySegmentedControl.selectedSegmentIndex + 1)
+        myLabelStepper.text = "\(myStepper.value)"
         
     }
     
@@ -155,6 +158,7 @@ class ViewController: UIViewController {
             myButtonBrais.setTitle(myString, for: .normal)
             myPageControl.currentPage = 0
             progress = 0.2
+            
         case 2..<3:
             mySegmentedControl.selectedSegmentIndex = 1
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
@@ -188,6 +192,7 @@ class ViewController: UIViewController {
         }
         
         myProgressView.progress = progress
+        myLabelStepper.text = "\(mySlider.value)"
     }
     
 //    ACCIONES DEL STEPPER
