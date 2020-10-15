@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mySlider: UISlider!
     
+    @IBOutlet weak var myStepper: UIStepper!
+    
+    @IBOutlet weak var mySwitch: UISwitch!
+    
 // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
@@ -38,6 +42,8 @@ class ViewController: UIViewController {
 //vamos a delegar con estos sobre el viewcontroller
         myFirstPickerView.dataSource = self
         myFirstPickerView.delegate = self
+        myFirstPickerView.isHidden = true
+//      El interruptor esta apagado por lo tanto el picker debe estar oculto
         
         //PAGE CONTROL
         myPageControl.numberOfPages = myPickerArray.count
@@ -52,13 +58,20 @@ class ViewController: UIViewController {
         for (index,value) in myPickerArray.enumerated(){
         
             mySegmentedControl.insertSegment(withTitle: value, at: index, animated: true)
-            
         }
         //SLIDERS
         mySlider.minimumTrackTintColor = .red
         mySlider.minimumValue = 1
         mySlider.maximumValue = Float(myPickerArray.count)
         mySlider.value = 1
+        
+        //STEPPERS
+        myStepper.minimumValue = 1
+        myStepper.maximumValue = Double(myPickerArray.count)
+        
+        // Switch
+        mySwitch.onTintColor = .blue
+        mySwitch.isOn = false //Indica si esta apagado
         
         
     }
@@ -85,6 +98,8 @@ class ViewController: UIViewController {
         
         mySlider.value = Float(myPageControl.currentPage + 1)
         
+        myStepper.value = Double(myPageControl.currentPage + 1)
+        
     }
     //ACCIONES DEL SEGMENTED CONTROL
     
@@ -99,6 +114,8 @@ class ViewController: UIViewController {
         
         mySlider.value = Float(mySegmentedControl.selectedSegmentIndex+1)
         
+        myStepper.value = Double(mySegmentedControl.selectedSegmentIndex + 1)
+        
     }
     
     //  ACCIONES DEL  SLIDER
@@ -106,6 +123,7 @@ class ViewController: UIViewController {
     @IBAction func mySliderAction(_ sender: Any) {
         
         switch mySlider.value {
+            
         case 1..<2:
             mySegmentedControl.selectedSegmentIndex = 0
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
@@ -117,6 +135,7 @@ class ViewController: UIViewController {
             myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
             let myString = myPickerArray[1]
             myButtonBrais.setTitle(myString, for: .normal)
+            
             myPageControl.currentPage = 1
         case 3..<4:
             mySegmentedControl.selectedSegmentIndex = 2
@@ -138,18 +157,41 @@ class ViewController: UIViewController {
             myPageControl.currentPage = 4
 
         }
-        
-        
     }
     
+//    ACCIONES DEL STEPPER
+//    con el stepper no puedo aun modificar el picker
+    
+    @IBAction func myStepperAction(_ sender: Any) {
+        
+        let miValor = myStepper.value
+        mySlider.value = Float(miValor)
+        mySegmentedControl.selectedSegmentIndex = Int(miValor)-1
+        myPageControl.currentPage = Int(miValor) - 1
+        
+        
+//        myButtonBrais.setTitle(myString, for: .normal)
+    }
+    
+    //ACCIONES DEL SWITCH
+    
+    @IBAction func mySwitchAction(_ sender: Any) {
+//        SI ESTA ENCENDIDO
+        if mySwitch.isOn{
+            myFirstPickerView.isHidden = false //hidden si esta apagado
+        }else{
+            myFirstPickerView.isHidden = true
+        }
+    }
     
 }
-//EXTiENDE EL VIEW CONTROLLER PARA NO TENER TANTO CODIGO EN SUS LLAVES
+//EXTIENDE EL VIEW CONTROLLER PARA NO TENER TANTO CODIGO EN SUS LLAVES
 
 //datasource sirve para cargar datos en esa vista y delegate para interactuar con ellas
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        //ESTE CONTROLA EL PICKER
         return 1//esas filas tendra el componente
     }
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -173,6 +215,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         mySegmentedControl.selectedSegmentIndex = row
         
         mySlider.value = Float(row+1)
+//      que el stepper se bloque al llegar al minimo o maximo
+        myStepper.value = Double(row+1)
     }
 }
     

@@ -49,23 +49,42 @@
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ASm-Zy-BIW"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ddx-aH-gt7">
+                                <rect key="frame" x="140" y="522" width="95" height="32"/>
+                                <connections>
+                                    <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="09O-xF-vSO"/>
+                                </connections>
+                            </stepper>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDt-Jy-kkO">
+                                <rect key="frame" x="163" y="574" width="49" height="31"/>
+                                <connections>
+                                    <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="d2W-Nk-RBH"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tDt-Jy-kkO" secondAttribute="trailing" constant="165" id="4HE-3K-sFj"/>
                             <constraint firstItem="0Xd-lf-9lc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="D2V-y6-fen"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="top" secondItem="0Xd-lf-9lc" secondAttribute="bottom" constant="20" id="EtP-H0-U4h"/>
                             <constraint firstItem="o4T-RD-x9j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fps-4f-cQt"/>
+                            <constraint firstItem="Ddx-aH-gt7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="HFn-jG-NAN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Occ-2m-pH5" secondAttribute="trailing" constant="20" id="Ikc-FM-Vgb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Xd-lf-9lc" secondAttribute="trailing" constant="30" id="KeH-pO-HFl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="140" id="NhW-uI-xPL"/>
                             <constraint firstItem="Occ-2m-pH5" firstAttribute="top" secondItem="8xW-wK-qPT" secondAttribute="bottom" constant="20" id="RNC-eU-HPF"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Syc-oA-Lez"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="top" secondItem="Occ-2m-pH5" secondAttribute="bottom" constant="20" id="WQy-6e-BtZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8xW-wK-qPT" secondAttribute="bottom" constant="429" id="amN-ls-uK7"/>
+                            <constraint firstItem="tDt-Jy-kkO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="dOS-9J-iky"/>
                             <constraint firstItem="Occ-2m-pH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eFP-L9-CWH"/>
                             <constraint firstItem="0Xd-lf-9lc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gYN-3D-m8Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ccV-Gi-Gv4" secondAttribute="trailing" constant="20" id="gwF-Ei-6kS"/>
+                            <constraint firstItem="Ddx-aH-gt7" firstAttribute="top" secondItem="o4T-RD-x9j" secondAttribute="bottom" constant="20" id="hAx-ZB-ZvT"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hux-h3-cn9"/>
+                            <constraint firstItem="tDt-Jy-kkO" firstAttribute="top" secondItem="Ddx-aH-gt7" secondAttribute="bottom" constant="20" id="it8-ne-cFT"/>
                             <constraint firstItem="o4T-RD-x9j" firstAttribute="top" secondItem="ccV-Gi-Gv4" secondAttribute="bottom" constant="15" id="j9m-Ky-CKs"/>
+                            <constraint firstItem="tDt-Jy-kkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="khh-SO-blt"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mv6-Fb-okY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o4T-RD-x9j" secondAttribute="trailing" constant="20" id="nOx-jZ-c4z"/>
                         </constraints>
@@ -77,6 +96,8 @@
                         <outlet property="myPageControl" destination="Occ-2m-pH5" id="MRr-u7-uBf"/>
                         <outlet property="mySegmentedControl" destination="ccV-Gi-Gv4" id="hFq-70-HjB"/>
                         <outlet property="mySlider" destination="o4T-RD-x9j" id="8xD-aG-omA"/>
+                        <outlet property="myStepper" destination="Ddx-aH-gt7" id="bCG-pR-Pup"/>
+                        <outlet property="mySwitch" destination="tDt-Jy-kkO" id="d4A-Sf-wBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
