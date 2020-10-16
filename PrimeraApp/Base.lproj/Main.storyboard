@@ -79,25 +79,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RpT-7z-Ego">
-                                <rect key="frame" x="30" y="94" width="315" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6u4-kH-jkZ">
+                                <rect key="frame" x="20" y="84" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6u4-kH-jkZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="3DY-DC-5Uy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tDt-Jy-kkO" secondAttribute="trailing" constant="165" id="4HE-3K-sFj"/>
                             <constraint firstItem="xWM-mO-T6b" firstAttribute="centerY" secondItem="Ddx-aH-gt7" secondAttribute="centerY" id="74B-dc-360"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6u4-kH-jkZ" secondAttribute="trailing" constant="20" id="9jk-jx-6FT"/>
                             <constraint firstItem="0Xd-lf-9lc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="D2V-y6-fen"/>
-                            <constraint firstItem="RpT-7z-Ego" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="DRH-lP-RqV"/>
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="top" secondItem="0Xd-lf-9lc" secondAttribute="bottom" constant="20" id="EtP-H0-U4h"/>
                             <constraint firstItem="o4T-RD-x9j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fps-4f-cQt"/>
                             <constraint firstItem="Ddx-aH-gt7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="HFn-jG-NAN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Occ-2m-pH5" secondAttribute="trailing" constant="20" id="Ikc-FM-Vgb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Xd-lf-9lc" secondAttribute="trailing" constant="30" id="KeH-pO-HFl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="140" id="NhW-uI-xPL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RpT-7z-Ego" secondAttribute="trailing" constant="30" id="PGk-Ka-mUH"/>
                             <constraint firstItem="Ayw-HR-4BF" firstAttribute="centerX" secondItem="8xW-wK-qPT" secondAttribute="centerX" id="PRh-SJ-FlM"/>
                             <constraint firstItem="Occ-2m-pH5" firstAttribute="top" secondItem="8xW-wK-qPT" secondAttribute="bottom" constant="20" id="RNC-eU-HPF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NoM-Iu-tjK" secondAttribute="trailing" constant="20" id="RP8-AE-iix"/>
@@ -120,8 +120,8 @@
                             <constraint firstItem="tDt-Jy-kkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="khh-SO-blt"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mv6-Fb-okY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o4T-RD-x9j" secondAttribute="trailing" constant="20" id="nOx-jZ-c4z"/>
-                            <constraint firstItem="RpT-7z-Ego" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="pAl-jG-Tuk"/>
                             <constraint firstItem="xWM-mO-T6b" firstAttribute="leading" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="20" id="tWS-vJ-r9K"/>
+                            <constraint firstItem="6u4-kH-jkZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vd2-7u-FC1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -137,6 +137,7 @@
                         <outlet property="mySlider" destination="o4T-RD-x9j" id="8xD-aG-omA"/>
                         <outlet property="myStepper" destination="Ddx-aH-gt7" id="bCG-pR-Pup"/>
                         <outlet property="mySwitch" destination="tDt-Jy-kkO" id="d4A-Sf-wBh"/>
+                        <outlet property="myTextField" destination="6u4-kH-jkZ" id="Ebz-Gs-xXN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

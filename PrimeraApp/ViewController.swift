@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myLabelSwitch: UILabel!
     
+    @IBOutlet weak var myTextField: UITextField!
+    
     // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
@@ -95,6 +97,14 @@ class ViewController: UIViewController {
         myLabelStepper.text = "1"
         
         myLabelSwitch.text = "OFF"
+        
+//        TEXT FIELD
+        myTextField.textColor = .black
+//        myTextField.center = .zero
+        myTextField.placeholder = "Introduce tu Nombre "
+        myTextField.delegate = self
+//queremos delegar el ViewController por eso ponemos self
+        
         
     }
         //ACTIONS
@@ -263,6 +273,18 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     }
 }
     
+//EXTENDEMOS EL TEXTFIELD
+extension ViewController: UITextFieldDelegate{
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        Ocurre cuando presionamos boton return en el teclado
+        textField.resignFirstResponder()
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        myButtonBrais.setTitle(myTextField.text, for: .normal)
+    }
+}
     
 
