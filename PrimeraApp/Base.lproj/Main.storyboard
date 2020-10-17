@@ -61,9 +61,6 @@
                                     <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="d2W-Nk-RBH"/>
                                 </connections>
                             </switch>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NoM-Iu-tjK">
-                                <rect key="frame" x="36" y="625" width="303" height="2"/>
-                            </progressView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ayw-HR-4BF">
                                 <rect key="frame" x="177.66666666666666" y="161" width="20" height="20"/>
                             </activityIndicatorView>
@@ -84,6 +81,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NoM-Iu-tjK">
+                                <rect key="frame" x="30" y="620" width="303" height="2"/>
+                            </progressView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ofg-hA-1tn">
+                                <rect key="frame" x="67" y="641" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -117,7 +126,6 @@
                             <constraint firstItem="8xW-wK-qPT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hux-h3-cn9"/>
                             <constraint firstItem="tDt-Jy-kkO" firstAttribute="top" secondItem="Ddx-aH-gt7" secondAttribute="bottom" constant="20" id="it8-ne-cFT"/>
                             <constraint firstItem="o4T-RD-x9j" firstAttribute="top" secondItem="ccV-Gi-Gv4" secondAttribute="bottom" constant="15" id="j9m-Ky-CKs"/>
-                            <constraint firstItem="tDt-Jy-kkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="khh-SO-blt"/>
                             <constraint firstItem="ccV-Gi-Gv4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mv6-Fb-okY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o4T-RD-x9j" secondAttribute="trailing" constant="20" id="nOx-jZ-c4z"/>
                             <constraint firstItem="xWM-mO-T6b" firstAttribute="leading" secondItem="Ddx-aH-gt7" secondAttribute="trailing" constant="20" id="tWS-vJ-r9K"/>
@@ -138,6 +146,7 @@
                         <outlet property="myStepper" destination="Ddx-aH-gt7" id="bCG-pR-Pup"/>
                         <outlet property="mySwitch" destination="tDt-Jy-kkO" id="d4A-Sf-wBh"/>
                         <outlet property="myTextField" destination="6u4-kH-jkZ" id="Ebz-Gs-xXN"/>
+                        <outlet property="myTextView" destination="Ofg-hA-1tn" id="C3V-0L-Q0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

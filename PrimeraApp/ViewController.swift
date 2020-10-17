@@ -35,12 +35,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myTextField: UITextField!
     
+    @IBOutlet weak var myTextView: UITextView!
+    
     // SE PREPARAN LAS CARACTERISTICAS DEL ELEMENTO
     override func viewDidLoad() {
         // BOTON
         super.viewDidLoad()
         
-        //       OULETS CARACTERISTICAS
+        // OULETS CARACTERISTICAS
         
         myButtonBrais.setTitle("", for: .normal)
         myButtonBrais.backgroundColor = .black
@@ -105,17 +107,22 @@ class ViewController: UIViewController {
         myTextField.delegate = self
 //queremos delegar el ViewController por eso ponemos self
         
+//        TEXT VIEWS
+        myTextView.textColor = .gray
+        myTextView.delegate = self
         
     }
         //ACTIONS
     //ACCIONES DEL BOTON
     @IBAction func buttonAction(_ sender: Any) {
+        
         if myButtonBrais.backgroundColor != .gray{
             myButtonBrais.backgroundColor = .brown
             
         }else{
             myButtonBrais.backgroundColor = .black
         }
+        myTextView.resignFirstResponder()
     }
 //    ACCIONES DEL PAGE CONTROL
     
@@ -287,4 +294,13 @@ extension ViewController: UITextFieldDelegate{
     }
 }
     
-
+extension ViewController: UITextViewDelegate{
+//  se llama cuando el text view comienza a editarse
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        myTextField.isHidden = true
+    }
+//  cuando se finaliza de editar
+    func textViewDidEndEditing(_ textView: UITextView) {
+        myTextField.isHidden = false
+    }
+}
